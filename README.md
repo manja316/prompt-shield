@@ -1,4 +1,9 @@
-# prompt-shield
+# ai-injection-guard
+
+[![PyPI version](https://img.shields.io/pypi/v/ai-injection-guard)](https://pypi.org/project/ai-injection-guard/)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/ai-injection-guard)](https://pypi.org/project/ai-injection-guard/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
 
 **Lightweight prompt injection detector for LLM applications.**
 
@@ -36,7 +41,7 @@ prompt-shield blocks the attack, ai-cost-guard stops the spend if one gets throu
 ## Install
 
 ```bash
-pip install prompt-shield
+pip install ai-injection-guard
 ```
 
 Or from source:
