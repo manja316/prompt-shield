@@ -19,6 +19,16 @@ def call_llm(user_input: str):
     return client.messages.create(...)   # blocked if injection detected
 ```
 
+Part of the **AI Agent Infrastructure Stack**:
+- [ai-cost-guard](https://github.com/manja316/ai-cost-guard) — budget enforcement
+- **ai-injection-guard** — prompt injection scanner ← you are here
+- [ai-decision-tracer](https://github.com/manja316/ai-trace) — local agent decision tracer
+
+**Claude Code users** — install the whole stack in one command:
+```
+/plugin marketplace add manja316/ai-agent-stack-skill
+```
+
 ---
 
 ## Why this exists
