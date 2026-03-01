@@ -24,11 +24,6 @@ Part of the **AI Agent Infrastructure Stack**:
 - **ai-injection-guard** — prompt injection scanner ← you are here
 - [ai-decision-tracer](https://github.com/LuciferForge/ai-trace) — local agent decision tracer
 
-**Claude Code users** — install the whole stack in one command:
-```
-/plugin marketplace add LuciferForge/lucifer-skills
-```
-
 ---
 
 ## Why this exists
