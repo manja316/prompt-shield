@@ -20,13 +20,13 @@ def call_llm(user_input: str):
 ```
 
 Part of the **AI Agent Infrastructure Stack**:
-- [ai-cost-guard](https://github.com/manja316/ai-cost-guard) — budget enforcement
+- [ai-cost-guard](https://github.com/LuciferForge/ai-cost-guard) — budget enforcement
 - **ai-injection-guard** — prompt injection scanner ← you are here
-- [ai-decision-tracer](https://github.com/manja316/ai-trace) — local agent decision tracer
+- [ai-decision-tracer](https://github.com/LuciferForge/ai-trace) — local agent decision tracer
 
 **Claude Code users** — install the whole stack in one command:
 ```
-/plugin marketplace add manja316/ai-agent-stack-skill
+/plugin marketplace add LuciferForge/lucifer-skills
 ```
 
 ---
@@ -43,7 +43,7 @@ Prompt injection is the #1 attack vector for LLM-powered apps:
 `prompt-shield` runs a pattern scan on every input **before** it reaches your LLM.
 Zero network calls. Zero dependencies. Raises `InjectionRiskError` on detection.
 
-Works as a companion to [`ai-cost-guard`](https://github.com/manja316/ai-cost-guard):
+Works as a companion to [`ai-cost-guard`](https://github.com/LuciferForge/ai-cost-guard):
 prompt-shield blocks the attack, ai-cost-guard stops the spend if one gets through.
 
 ---
@@ -56,7 +56,7 @@ pip install ai-injection-guard
 
 Or from source:
 ```bash
-git clone https://github.com/manja316/prompt-shield
+git clone https://github.com/LuciferForge/prompt-shield
 cd prompt-shield
 pip install -e ".[dev]"
 ```
