@@ -512,6 +512,52 @@ PATTERNS = [
         "category": "claude_code",
         "description": "Fake tool/function result tags to inject trusted content",
     },
+
+    # ── Structural / delimiter injection ────────────────────────────────────
+    {
+        "name": "delimiter_bracket_injection",
+        "pattern": r"\[(END|STOP|DONE|OUTPUT|INPUT|SYSTEM|ADMIN|INSTRUCTIONS?)\]\s*(new\s+)?instructions?",
+        "weight": 8,
+        "category": "role_override",
+        "description": "Bracket delimiter followed by new instructions",
+    },
+    {
+        "name": "delimiter_separator_injection",
+        "pattern": r"(?:---+|===+|___+)\s*(?:SYSTEM|ADMIN|INSTRUCTIONS?|NEW\s+ROLE|OVERRIDE)",
+        "weight": 8,
+        "category": "role_override",
+        "description": "Separator lines (---, ===) followed by authority keywords",
+    },
+    {
+        "name": "delimiter_xml_injection",
+        "pattern": r"</?(?:system|user|assistant|human|ai|prompt|instructions?)(?:\s[^>]*)?>",
+        "weight": 8,
+        "category": "role_override",
+        "description": "Fake XML role/system tags to override conversation structure",
+    },
+    {
+        "name": "delimiter_input_ends",
+        "pattern": r"(?:input|text|message|user)\s+(?:ends?|stops?|finishes?)\s+here",
+        "weight": 7,
+        "category": "role_override",
+        "description": "Claims user input has ended to inject new instructions",
+    },
+
+    # ── Base64 payload detection ────────────────────────────────────────────
+    {
+        "name": "encoding_base64_payload",
+        "pattern": r"(?:[A-Za-z0-9+/]{4}){6,}(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?",
+        "weight": 4,
+        "category": "encoding",
+        "description": "Actual Base64-encoded payload (32+ chars with padding)",
+    },
+    {
+        "name": "encoding_hex_payload",
+        "pattern": r"(?:\\x[0-9a-fA-F]{2}){4,}",
+        "weight": 5,
+        "category": "encoding",
+        "description": "Hex-escaped payload sequences",
+    },
 ]
 
 
